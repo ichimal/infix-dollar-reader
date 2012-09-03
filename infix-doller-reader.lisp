@@ -2,7 +2,7 @@
   (cl:in-package #:infix-doller-reader-asd) )
 
 (defpackage :infix-doller-reader
-  (:nicknames :idoller)
+  (:nicknames :infix-doller :idoller)
   (:shadow #:infix-doller-reader #:*original-readtable*)
   (:use :cl)
   (:export #:use-infix-doller #:unuse-infix-doller) )
