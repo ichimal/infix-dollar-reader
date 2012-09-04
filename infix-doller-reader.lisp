@@ -1,5 +1,4 @@
-(cl:eval-when (:load-toplevel :compile-toplevel :execute)
-  (cl:in-package #:infix-doller-reader-asd) )
+(cl:in-package #:infix-doller-reader-asd)
 
 (defpackage :infix-doller-reader
   (:nicknames :infix-doller :idoller)
@@ -7,8 +6,7 @@
   (:use :cl)
   (:export #:use-infix-doller #:unuse-infix-doller) )
 
-(eval-when (:load-toplevel :compile-toplevel :execute)
-  (in-package :infix-doller-reader) )
+(in-package :infix-doller-reader)
 
 (defvar *original-readtable* nil
   "Saving original readtable" )
