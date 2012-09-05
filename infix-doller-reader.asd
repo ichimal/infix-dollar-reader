@@ -16,3 +16,9 @@
   :components
     ((:file "infix-doller-reader")) )
 
+(defmethod perform ((op test-op)
+                    (component (eql (find-system :infix-doller-reader))) )
+  (declare (ignore op component))
+  (operate 'load-op :infix-doller-reader-test)
+  (operate 'test-op :infix-doller-reader-test :force t) )
+
