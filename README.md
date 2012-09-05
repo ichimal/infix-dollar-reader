@@ -48,3 +48,22 @@ And also,
 
         (= (+ 1 2 $ * 3 4 $ + 5 6) (+ 1 2 (* 3 4 (+ 5 6)))) ; => T
 
+### limitation:
+
+A symbol name which has any $ characters would cause unexpected behavior.
+
+You should not use any $ characters in a symbol name without barrier or intern from a string.
+
+e.g.
+
+        (idoller:use-infix-doller)
+
+        (defconstant foo$- 1) ; => FOO
+        ;; would be parsed as (defconstant foo(- 1))
+
+        (defconstant |FOO$-| 1) ; => FOO$- or |FOO$-|
+        ;; not be parsed a #\$ as a #\( because of barrier
+
+        (intern "FOO$-") ; => FOO$-
+        ;; #\$, $-in-a-string and $-in-a-comment are not affected
+
