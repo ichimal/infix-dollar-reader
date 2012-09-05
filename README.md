@@ -11,7 +11,14 @@ Infix $ operator for reducing redundant paranthesis.
 
 2. enable to use infix $ notation;
 
+  for REPL:
+
         (idoller:use-infix-doller)
+
+  for source code:
+
+        (eval-when (:compile-toplevel)
+          (idoller:use-infix-doller) )
 
   CAUTION: this operation replaces current \*READTABLE\* with copied one.
 
@@ -20,7 +27,14 @@ Infix $ operator for reducing redundant paranthesis.
 
 4. rollback \*READTABLE\*;
 
+  for REPL:
+
         (idoller:unuse-infix-doller)
+
+  for source code:
+
+        (eval-when (:compile-toplevel)
+          (idoller:unuse-infix-doller) )
 
 ### example:
 
