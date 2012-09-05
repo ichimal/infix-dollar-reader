@@ -4,6 +4,7 @@
   (:nicknames :infix-doller :idoller)
   (:shadow #:infix-doller-reader #:*original-readtable*)
   (:use :cl)
+  (:import-from :syntax #:find-syntax #:define-package-syntax)
   (:export #:use-infix-doller #:unuse-infix-doller) )
 
 (in-package :infix-doller-reader)
@@ -18,6 +19,14 @@
     (unread-char #\) stream)
     entity ))
 
+(unless (find-syntax :infix-doller)
+  (define-package-syntax :infix-doller
+    (:merge :standard)
+    (:macro-char #\$ #'infix-doller-reader::infix-doller-reader) ))
+
+;;; Yet another enabler/disabler TO MODIFY global *READTABLE*.
+;;; For normal use, use (syntax:use-syntax :infix-doller) instead of these
+;;; I/Fs below.
 (defun use-infix-doller (&optional print-note)
   (declare (ignorable print-note))
   "Enable infix $ operator.
