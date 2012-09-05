@@ -6,7 +6,7 @@
 (in-package #:infix-doller-reader-asd)
 
 (defsystem infix-doller-reader-test
-  :depends-on (:infix-doller-reader :cl-syntax-infix-doller :rt)
+  :depends-on (:infix-doller-reader :rt)
   :components ((:file "infix-doller-reader-test")) )
 
 (defmethod perform ((op test-op)

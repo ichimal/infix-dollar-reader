@@ -5,16 +5,36 @@ Infix $ operator for reducing redundant paranthesis.
 
 ### usage:
 
-1. load packages;
+1. load package;
 
         (asdf:load-system :infix-doller-reader)
-        (asdf:load-system :cl-syntax-infix-doller)
 
 2. enable to use infix $ notation;
 
-        (syntax:use-syntax :infix-doller)
+  for REPL:
+
+        (idoller:use-infix-doller)
+
+  for source code:
+
+        (eval-when (:compile-toplevel)
+          (idoller:use-infix-doller) )
+
+  CAUTION: this operation replaces current \*READTABLE\* with copied one.
 
 3. write your forms with infix $ notation s.t. (the fixnum $ + x 10)
+
+
+4. rollback \*READTABLE\*;
+
+  for REPL:
+
+        (idoller:unuse-infix-doller)
+
+  for source code:
+
+        (eval-when (:compile-toplevel)
+          (idoller:unuse-infix-doller) )
 
 ### example:
 
@@ -36,7 +56,7 @@ You should not use any $ characters in a symbol name without barrier or intern f
 
 e.g.
 
-        (syntax:use-syntax :infix-doller)
+        (idoller:use-infix-doller)
 
         (defconstant foo$- 1) ; => FOO
         ;; would be parsed as (defconstant foo(- 1))
@@ -47,7 +67,3 @@ e.g.
         (intern "FOO$-") ; => FOO$-
         ;; #\$, $-in-a-string and $-in-a-comment are not affected
 
-### license:
-
-* infix-doller-reader is under MIT license.
-* cl-syntax-infix-doller is under LLGPL.
