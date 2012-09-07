@@ -1,7 +1,7 @@
 infix-dollar-reader
 ===================
 
-Infix $ operator for reducing redundant paranthesis.
+Infix `$` operator for reducing redundant paranthesis.
 
 ### usage:
 
@@ -9,11 +9,11 @@ Infix $ operator for reducing redundant paranthesis.
 
         (asdf:load-system :infix-dollar-reader)
 
-2. enable to use infix $ notation;
+2. enable to use infix `$` notation;
 
         (syntax:use-syntax :infix-dollar)
 
-3. write your forms with infix $ notation s.t. (the fixnum $ + x 10)
+3. write your forms with infix `$` notation s.t. `(the fixnum $ + x 10)`
 
 ### example:
 
@@ -29,9 +29,9 @@ And also,
 
 ### limitation:
 
-A symbol name which has any $ characters would cause unexpected behavior.
+A symbol name which has any `$` characters would cause unexpected behavior.
 
-You should not use any $ characters in a symbol name without barrier or intern from a string.
+You should not use any `$` characters in a symbol name without barrier or intern from a string.
 
 e.g.
 
