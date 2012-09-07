@@ -1,4 +1,4 @@
-infix-doller-reader
+infix-dollar-reader
 ===================
 
 Infix $ operator for reducing redundant paranthesis.
@@ -7,11 +7,11 @@ Infix $ operator for reducing redundant paranthesis.
 
 1. load package;
 
-        (asdf:load-system :infix-doller-reader)
+        (asdf:load-system :infix-dollar-reader)
 
 2. enable to use infix $ notation;
 
-        (syntax:use-syntax :infix-doller)
+        (syntax:use-syntax :infix-dollar)
 
 3. write your forms with infix $ notation s.t. (the fixnum $ + x 10)
 
@@ -35,7 +35,7 @@ You should not use any $ characters in a symbol name without barrier or intern f
 
 e.g.
 
-        (syntax:use-syntax :infix-doller)
+        (syntax:use-syntax :infix-dollar)
 
         (defconstant foo$- 1) ; => FOO
         ;; would be parsed as (defconstant foo(- 1))
@@ -48,4 +48,4 @@ e.g.
 
 ### license:
 
-infix-doller-reader is under MIT license.
+infix-dollar-reader is under MIT license.

@@ -1,15 +1,15 @@
-(cl:in-package #:infix-doller-reader-asd)
+(cl:in-package #:infix-dollar-reader-asd)
 
-(defpackage :infix-doller-reader-test
-  (:use :cl :infix-doller-reader :rt) )
+(defpackage :infix-dollar-reader-test
+  (:use :cl :infix-dollar-reader :rt) )
 
-(in-package :infix-doller-reader-test)
+(in-package :infix-dollar-reader-test)
 
 ;; enable infix-$ here to compile this test suite itself
-(syntax:use-syntax :infix-doller)
+(syntax:use-syntax :infix-dollar)
 
 (deftest enable-notaion.1
-  (syntax:use-syntax :infix-doller)
+  (syntax:use-syntax :infix-dollar)
   nil )
 
 (deftest single-use.1

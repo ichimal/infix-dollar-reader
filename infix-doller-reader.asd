@@ -1,12 +1,12 @@
 (in-package :cl-user)
 
-(defpackage #:infix-doller-reader-asd
+(defpackage #:infix-dollar-reader-asd
   (:use :cl :asdf) )
 
-(in-package #:infix-doller-reader-asd)
+(in-package #:infix-dollar-reader-asd)
 
-(defsystem infix-doller-reader
-  :name "infix-doller-reader"
+(defsystem infix-dollar-reader
+  :name "infix-dollar-reader"
   :version "0.3.0"
   :maintainer "SUZUKI Shingo"
   :author "SUZUKI Shingo"
@@ -15,11 +15,11 @@
   :serial nil
   :depends-on (:cl-syntax)
   :components
-    ((:file "infix-doller-reader")) )
+    ((:file "infix-dollar-reader")) )
 
 (defmethod perform ((op test-op)
-                    (component (eql (find-system :infix-doller-reader))) )
+                    (component (eql (find-system :infix-dollar-reader))) )
   (declare (ignore op component))
-  (operate 'load-op :infix-doller-reader-test)
-  (operate 'test-op :infix-doller-reader-test :force t) )
+  (operate 'load-op :infix-dollar-reader-test)
+  (operate 'test-op :infix-dollar-reader-test :force t) )
 
