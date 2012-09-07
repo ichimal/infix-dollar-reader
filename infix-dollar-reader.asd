@@ -1,4 +1,4 @@
-(in-package :cl-user)
+(cl:in-package :cl-user)
 
 (defpackage #:infix-dollar-reader-asd
   (:use :cl :asdf) )
